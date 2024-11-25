@@ -1,0 +1,56 @@
+# RFID and Keypad Based Door Lock System
+
+This project demonstrates how to build an RFID-based door lock system with an additional keypad for enhanced security. It allows users to unlock a door using an RFID tag or by entering a PIN on a keypad. The system uses an Arduino UNO as the central microcontroller and incorporates a display for visual feedback.
+
+---
+
+## Features
+- Dual authentication: RFID tag and/or keypad PIN.
+- Visual feedback through LEDs and an LCD.
+- Audio feedback with a buzzer.
+- Simple and customizable design.
+
+---
+
+## Components Required
+### Hardware
+- **Arduino UNO** - 1 unit  
+- **4x4 Keypad (or 3x4 Keypad)** - 1 unit  
+- **LED (Generic)** - 3 units  
+- **Buzzer** - 1 unit  
+- **10kΩ Resistor** - 3 units  
+- **RFID Reader** - 1 unit  
+- **I2C 16x2 LCD Display Module** - 1 unit  
+
+### Software
+- Arduino IDE  
+- Arduino Web Editor  
+
+### Tools
+- Cordless Drill / Driver (optional for installation)  
+
+---
+
+## Circuit Diagram
+Connect the components as follows:
+- RFID Reader: SDA -> A4, SCL -> A5, VCC -> 3.3V, GND -> GND
+- Keypad: Connect rows and columns to digital pins (adjust in code).
+- LEDs:
+  - Green LED -> Pin 8 (indicates access granted)
+  - Red LED -> Pin 9 (indicates access denied)
+  - Yellow LED -> Pin 10 (indicates system ready)
+- Buzzer: Connect to Pin 11.
+- LCD: SDA -> A4, SCL -> A5, VCC -> 5V, GND -> GND
+- Power: Arduino powered via USB or external 9V battery.
+
+---
+
+## How It Works
+1. **RFID Authentication**: The RFID reader scans the tag. If it matches a pre-stored tag ID, access is granted.
+2. **Keypad PIN Entry**: If a valid PIN is entered via the keypad, access is granted.
+3. **Visual Feedback**: 
+   - Green LED lights up for success.
+   - Red LED lights up for failure.
+   - Yellow LED remains on when the system is ready.
+4. **Audio Feedback**: Buzzer beeps during operations for additional feedback.
+5. **LCD Display**: Shows system status and prompts.
